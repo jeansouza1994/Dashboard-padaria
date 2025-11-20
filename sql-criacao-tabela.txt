@@ -1,0 +1,15 @@
+CREATE TABLE notas (
+    id_nfe TEXT PRIMARY KEY,          -- ID único da nota fiscal (ex: NFe33230333163403000100650010005487631016664014)
+    numero_nf TEXT NOT NULL,          -- Número da nota fiscal (apenas o número, sem o "NFe")
+    data_emissao TEXT NOT NULL,       -- Data de emissão no formato YYYY-MM-DD
+    valor_nf REAL NOT NULL,           -- Valor total da nota
+    item_descricao TEXT NOT NULL,     -- Descrição do item
+    item_valor_total REAL NOT NULL,   -- Valor total do item
+    item_quantidade REAL NOT NULL,    -- Quantidade do item
+    item_valor_unit REAL NOT NULL,    -- Valor unitário do item
+    item_codigo TEXT NOT NULL,        -- Código do item
+    ano TEXT NOT NULL,                -- Ano da nota (ex: '2021')
+    mes TEXT NOT NULL,                -- Mês da nota (ex: '01')
+    dia TEXT NOT NULL,                -- Dia da nota (ex: '05')
+    tipo_pagamento TEXT               -- Tipo de pagamento (ex: '01' = Dinheiro, '03' = Cartão de crédito)
+);
