@@ -47,7 +47,7 @@ Banco SQLite utilizado: https://drive.google.com/drive/folders/1DOImvxNuPYJRaxNl
     pip install streamlit pandas plotly
     ```
 
-3. Baixe o banco de dados SQLite pelo link abaixo:
+3. Baixe o banco de dados SQLite pelo link abaixo e coloque na pasta principal(Dashboard-padaria):
 
     ```bash
     https://drive.google.com/drive/folders/1DOImvxNuPYJRaxNlcTZ3HtPwKV4P9ujT?usp=sharing
