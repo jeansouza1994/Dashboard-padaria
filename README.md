@@ -73,10 +73,10 @@ DASHBOARD-PADARIA
 
 ## Equipe do Projeto
 
-**Claudio Rebelo**
-**Jean Souza**
-**Natália Paulino**
-**Rafael da Silva**
-**Aloisio Santos**
+-   Claudio Rebelo
+-   Jean Souza
+-   Natália Paulino
+-   Rafael da Silva
+-   Aloisio Santos
 
-**Prof. Raphael Mauricio**
+-   Prof. Raphael Mauricio
