@@ -4,6 +4,9 @@ Este projeto foi desenvolvido como atividade prática da disciplina Tópicos de 
 
 A aplicação permite explorar dados reais de vendas obtidos a partir de notas fiscais em XML, fornecidas por uma padaria de pequeno/médio porte localizada em Botafogo (RJ). O projeto envolve organização dos dados, construção de um banco de dados SQLite e desenvolvimento de um dashboard interativo para auxiliar na tomada de decisões do negócio.
 
+Banco SQLite utilizado: https://drive.google.com/drive/folders/1DOImvxNuPYJRaxNlcTZ3HtPwKV4P9ujT?usp=sharing
+(Lembrando que o banco de dados baixado precisa ser colocado na pasta Dashboard-paradaria junto com os outros arquivos.)
+
 ## Objetivos
 
 -   Demonstrar a aplicação prática de técnicas de análise e visualização de dados estudadas na disciplina.
@@ -35,7 +38,7 @@ A aplicação permite explorar dados reais de vendas obtidos a partir de notas f
 1. Clone este repositório em sua máquina local:
 
     ```bash
-    git clone
+    git clone https://github.com/jeansouza1994/Dashboard-padaria.git
     ```
 
 2. Certifique-se de ter o Python instalado. Instale as dependências necessárias:
@@ -44,7 +47,13 @@ A aplicação permite explorar dados reais de vendas obtidos a partir de notas f
     pip install streamlit pandas plotly
     ```
 
-3. Execute a aplicação utilizando o Streamlit:
+3. Baixe o banco de dados SQLite pelo link abaixo:
+
+    ```bash
+    https://drive.google.com/drive/folders/1DOImvxNuPYJRaxNlcTZ3HtPwKV4P9ujT?usp=sharing
+    ```
+
+4. Execute a aplicação utilizando o Streamlit:
 
     ```bash
     streamlit run main.py
