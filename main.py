@@ -3,10 +3,10 @@ import pandas as pd
 import plotly.express as px
 import sqlite3
 
-#Conecta ao banco de dados SQLite
+#conecta ao banco de dados SQLite
 conn = sqlite3.connect("notas_fiscais.db")
 
-#Query SQL para obter todos os dados da nota fiscal
+#query SQL para obter todos os dados da nota fiscal
 query = """
 SELECT
     id_nfe,
@@ -28,17 +28,17 @@ WHERE data_emissao IS NOT NULL
 df = pd.read_sql(query, conn)
 conn.close()
 
-# Converte colunas do dataFrame para tipos melhores de se manipular
+# converte colunas do dataFrame para tipos melhores de se manipular
 df['data_emissao'] = pd.to_datetime(df['data_emissao'])
 df['ano'] = df['ano'].astype(int)
 df['mes'] = df['mes'].astype(int)
 df['dia'] = df['dia'].astype(int)
 
-# Início da configuração Streamlit
-st.title("📊 Dashboard NF-e")
+# início da configuração Streamlit
+st.title("Dashboard NF-e")
 
-# Gráfico 1 - Vendas Totais ao Longo do Tempo(anos e meses)
-st.subheader("📅 Vendas Totais ao Longo do Tempo")
+# gráfico 1 - Vendas Totais ao Longo do Tempo(anos e meses)
+st.subheader("Vendas Totais ao Longo do Tempo")
 
 df_vendas_mes = (
     df.groupby(["ano", "mes"])["valor_nf"]
@@ -53,7 +53,7 @@ df_vendas_mes["data"] = pd.to_datetime(
 )
 
 
-# Muda o dataframe para incluir nomes dos meses em português
+# muda o dataframe para incluir nomes dos meses em português
 meses_pt = [
     "janeiro", "fevereiro", "março", "abril", "maio", "junho",
     "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"
@@ -86,9 +86,9 @@ fig1.update_traces(
 st.plotly_chart(fig1, use_container_width=True)
 
 
-# Gráfico 2 - Top 10 Produtos por ano e mês
+# gráfico 2 - Top 10 Produtos por ano e mês
 
-st.subheader("🛒 Top 10 Produtos por Ano e Mês")
+st.subheader("Top 10 Produtos por Ano e Mês")
 
 meses_pt = [
     "janeiro", "fevereiro", "março", "abril", "maio", "junho",
@@ -117,7 +117,7 @@ else:
     titulo_mes = mes_filtro
 
 
-# Gráfico 3 - Top 10 Produtos
+# gráfico 3 - Top 10 Produtos
 df_produtos = (
     df_filtrado.groupby("item_descricao")["item_valor_total"]
     .sum()
@@ -134,7 +134,7 @@ fig2 = px.bar(
     title=f"Top 10 Produtos - {titulo_mes}/{ano_filtro}",
 )
 
-# Formatação para moeda ficar em BRL no hover
+# formatação para moeda ficar em BRL no hover
 fig2.update_traces(
     hovertemplate="Produto: %{x}<br>Valor vendido: R$ %{customdata}"
 )
@@ -150,10 +150,10 @@ fig2.update_yaxes(tickformat=",.2f")
 st.plotly_chart(fig2, use_container_width=True)
 
 
-# Gráfico 4 - Top 3 Produtos(grafico de pizza)
+# gráfico 4 - Top 3 Produtos(grafico de pizza)
 df_top3 = df_produtos.head(3).copy()
 
-# Formatação para moeda ficar em BRL no hover
+# formatação para moeda ficar em BRL no hover
 def br_currency(v):
     s = f"{v:,.2f}"
     s = s.replace(",", "X").replace(".", ",").replace("X", ".")
@@ -175,8 +175,8 @@ fig3.update_traces(
 
 st.plotly_chart(fig3, use_container_width=True)
 
-# Gráfico 4 - Vendas por Forma de Pagamento
-st.subheader("💳 Vendas por Forma de Pagamento")
+# gráfico 4 - Vendas por Forma de Pagamento
+st.subheader("Vendas por Forma de Pagamento")
 
 formas_pagamento = {
     "01": "Dinheiro",
@@ -206,7 +206,7 @@ df_pag = (
     .sort_values("Valor vendido", ascending=False)
 )
 
-# Formatação para moeda ficar em BRL no hover
+# formatação para moeda ficar em BRL no hover
 def format_brl(x):
     try:
         x = float(x)
