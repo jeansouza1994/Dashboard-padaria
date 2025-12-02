@@ -2,7 +2,7 @@
 
 Este projeto foi desenvolvido como atividade prática da disciplina Tópicos de Big Data em Python, com o objetivo de aplicar conceitos de análise de dados, manipulação de arquivos XML e visualização interativa utilizando ferramentas modernas da linguagem Python.
 
-A aplicação permite explorar dados reais de vendas obtidos a partir de notas fiscais em XML, fornecidas por uma padaria de pequeno/médio porte localizada em Botafogo (RJ). O projeto envolve organização dos dados, construção de um banco de dados SQLite e desenvolvimento de um dashboard interativo para auxiliar na tomada de decisões do negócio.
+A aplicação permite explorar dados reais de vendas obtidos a partir de notas fiscais em XML, fornecidas por uma padaria de pequeno/médio porte localizada em Copacabana (RJ). O projeto envolve organização dos dados, construção de um banco de dados SQLite e desenvolvimento de um dashboard interativo para auxiliar na tomada de decisões do negócio.
 
 Banco SQLite utilizado: https://drive.google.com/drive/folders/1DOImvxNuPYJRaxNlcTZ3HtPwKV4P9ujT?usp=sharing
 (Lembrando que o banco de dados baixado precisa ser colocado na pasta Dashboard-paradaria junto com os outros arquivos.)
